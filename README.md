@@ -1,5 +1,5 @@
-# -
 # HappyThirteenWater
+## 徽章
 ![](https://img.shields.io/badge/python-3.7-green)<br>
 ![](https://img.shields.io/badge/HappyThirTeenWater-v1.0.0-brightgreen)<br>
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0d5f099c86ee403591c3132b75609b9d)](https://www.codacy.com/manual/DDDdreamer/HappyThirteenWater-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DDDdreamer/HappyThirteenWater-&amp;utm_campaign=Badge_Grade)
@@ -19,4 +19,4 @@
     1.开始游戏（包括寻找对局和出牌）：寻找战局之后会有6-7s的出牌时间，页面可能会卡顿；
     2.开启多个页面只能运行一个页面，比如同时开启寻找游戏和战局详情只能运行其中一个,否则会造成闪退；
     3.若UI开启时造成闪退，一般情况下由于服务器关闭引起的，只需等待服务器重新开启即可进入游戏;
-    4.做的丑，希望凑合着用
+    4.UI和AI都写得很丑，希望凑合着用QAQ！
