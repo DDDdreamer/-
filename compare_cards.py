@@ -365,51 +365,46 @@ def Compare(old, new):
         type_old = old['type']  #原牌牌型
         type_new = new['type']  #新牌牌型
         card_profit = {
-            'shangdun':{'散牌':1,'一对':1,"三条":1},
-            'zhongdun':{'散牌':1,'一对':1,"两对":1,"连对":1,"三条":1,"顺子":1,"同花":1,"葫芦":2,"炸弹":8,"同花顺":10},
-            'xiadun':{'散牌':1,'一对':1,"两对":1,"连对":1,"三条":1,"顺子":1,"同花":1,"葫芦":1,"炸弹":4,"同花顺":5}
+            'shangdun':{'散牌':1.2,'一对':1.5,"三条":2},
+            'zhongdun':{'散牌':1,'一对':1,"两对":1.1,"连对":1.2,"三条":1.2,"顺子":1.3,"同花":1.4,"葫芦":2,"炸弹":2.5,"同花顺":3},
+            'xiadun':{'散牌':0.9,'一对':0.9,"两对":1,"连对":1,"三条":1.1,"顺子":1.1,"同花":1.2,"葫芦":1.2,"炸弹":1.5,"同花顺":2}
         }
 
         if(old['cards_profit'] == 0.0):
             p1 = p2 = p3 = 0.0
             #计算上墩权值
             if type_old[0] == '散牌':
-                p1 = cards_order['散牌'] + cards_value(old['info'][0][1]) * card_profit['shangdun']['散牌']
+                p1 = (cards_order['散牌'] + cards_value(old['info'][0][1]))*card_profit['shangdun']['散牌']
             else:
-                p1 = cards_order[type_old[0]]  + (cards_value(old['info'][0][1])*10.0 + cards_value(old['info'][0][2])) * card_profit['shangdun'][type_old[0]]
+                p1 = (cards_order[type_old[0]]  + cards_value([old['info'][0][3][-1]]))*card_profit['shangdun'][type_old[0]]
             #计算中墩权值
             if type_old[1] == "散牌" or type_old[1] == "同花" or type_old[1] == "顺子" or type_old[1] == "同花顺":
-                p2 = cards_order[type_old[1]] + cards_value([old['info'][1][1][-1]]) * card_profit['zhongdun'][type_old[1]]
+                p2 = (cards_order[type_old[1]]  + cards_value(old['info'][1][1])) * card_profit['zhongdun'][type_old[1]]
             else:
-                p2 = cards_order[type_old[1]] + (cards_value(old['info'][1][1]) *10 + cards_value(old['info'][1][2])) * card_profit['zhongdun'][type_old[1]]
+                p2 =( cards_order[type_old[1]] + cards_value([old['info'][1][3][-1]])) * card_profit['zhongdun'][type_old[1]]
             #计算下墩权值
             if type_old[2] == "散牌" or type_old[2] == "同花" or type_old[2] == "顺子" or type_old[2] == "同花顺":
-                p2 = cards_order[type_old[2]] + cards_value([old['info'][2][1][-1]]) * card_profit['xiadun'][type_old[2]]
+                p2 = (cards_order[type_old[2]]  + cards_value(old['info'][2][1])) * card_profit['xiadun'][type_old[2]]
             else:
-                p2 = cards_order[type_old[2]] + (cards_value(old['info'][2][1]) * 10 + cards_value(old['info'][2][2]) )* card_profit['xiadun'][type_old[2]]
+                p2 =( cards_order[type_old[2]] + cards_value([old['info'][2][3][-1]])) * card_profit['xiadun'][type_old[2]]
             old['cards_profit'] = p1 + p2 + p3
 
         p1 = p2 = p3 = 0.0
         # 计算上墩权值
         if type_new[0] == '散牌':
-            p1 = cards_order['散牌'] + cards_value(new['info'][0][1]) * card_profit['shangdun']['散牌']
+            p1 = (cards_order['散牌'] + cards_value(new['info'][0][1])) * card_profit['shangdun']['散牌']
         else:
-            p1 = cards_order[type_new[0]] + (cards_value(new['info'][0][1]) * 10.0 + cards_value(new['info'][0][2])) * \
-                 card_profit['shangdun'][type_new[0]]
+            p1 = (cards_order[type_new[0]] + cards_value([new['info'][0][3][-1]])) * card_profit['shangdun'][type_new[0]]
         # 计算中墩权值
         if type_new[1] == "散牌" or type_new[1] == "同花" or type_new[1] == "顺子" or type_new[1] == "同花顺":
-            p2 = cards_order[type_new[1]]  + cards_value([new['info'][1][1][-1]]) * card_profit['zhongdun'][
-                type_new[1]]
+            p2 = (cards_order[type_new[1]] + cards_value(new['info'][1][1])) * card_profit['zhongdun'][type_new[1]]
         else:
-            p2 = cards_order[type_new[1]]  + (cards_value(new['info'][1][1]) * 10 + cards_value(new['info'][1][2])) * \
-                 card_profit['zhongdun'][type_new[1]]
-        # 计算下墩权值
+            p2 = (cards_order[type_new[1]] + cards_value([new['info'][1][3][-1]])) * card_profit['zhongdun'][type_new[1]]
+            # 计算下墩权值
         if type_new[2] == "散牌" or type_new[2] == "同花" or type_new[2] == "顺子" or type_new[2] == "同花顺":
-            p2 = cards_order[type_new[2]]  + cards_value([new['info'][2][1][-1]]) * card_profit['xiadun'][
-                type_new[2]]
+            p3 = (cards_order[type_new[2]] + cards_value(new['info'][2][1])) * card_profit['xiadun'][type_new[2]]
         else:
-            p2 = cards_order[type_new[2]]  + (cards_value(new['info'][2][1]) * 10 + cards_value(new['info'][2][2])) * \
-                 card_profit['xiadun'][type_new[2]]
+            p3 = (cards_order[type_new[2]] + cards_value([new['info'][2][3][-1]])) * card_profit['xiadun'][type_new[2]]
         new['cards_profit']  = p1 + p2 +p3
 
 
