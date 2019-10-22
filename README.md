@@ -1,9 +1,8 @@
 # -
-AI自动出牌
 # HappyThirteenWater
 ![](https://img.shields.io/badge/python-3.7-green)<br>
-![](https://img.shields.io/badge/HappyThirTeenWater-v1.0.0-brightgreen)
-
+![](https://img.shields.io/badge/HappyThirTeenWater-v1.0.0-brightgreen)<br>
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0d5f099c86ee403591c3132b75609b9d)](https://www.codacy.com/manual/DDDdreamer/HappyThirteenWater-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DDDdreamer/HappyThirteenWater-&amp;utm_campaign=Badge_Grade)
 ## 运行环境
     windows + 工具版本：python3.7 + 运行前需先下载pyqt5、requests第三方库，可使用pip对pyqt5、requests库进行下载安装
  [pip使用教程](https://blog.csdn.net/m0_37774696/article/details/84328843)
