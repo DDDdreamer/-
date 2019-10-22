@@ -9,6 +9,7 @@ AI自动出牌
  [pip使用教程](https://blog.csdn.net/m0_37774696/article/details/84328843)
 ## 食用方法
     AI算法放在HappyThirteenWater.py文件中，下载完后所有文件打开该文件可进行测试，打开后即可运行食用。
+    UI放在runn.py中，打开运行即可食用。
     可通过下载项目运行runn.py进行食用，食用过程中可能会出现页面卡顿的现象，还请各位耐心等待（无奈算法太low还跑得久），谢谢理解
 
     主要用法：
