@@ -1,0 +1,113 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'three.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setFixedSize(775, 549)
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(775, 549)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("QWidget#centralwidget{\n"
+"border-image: url(:/beijing1/icons/three.png);}\n"
+"")
+        self.centralwidget.setObjectName("centralwidget")
+        self.User_name = QtWidgets.QLineEdit(self.centralwidget)
+        self.User_name.setGeometry(QtCore.QRect(250, 170, 261, 31))
+        self.User_name.setObjectName("User_name")
+        self.check = QtWidgets.QPushButton(self.centralwidget)
+        self.check.setGeometry(QtCore.QRect(310, 430, 161, 41))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        self.check.setPalette(palette)
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
+        font.setBold(True)
+        font.setWeight(75)
+        self.check.setFont(font)
+        self.check.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.check.setStyleSheet("background-color:rgb(85, 255, 255);")
+        self.check.setObjectName("check")
+        self.user_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.user_password.setGeometry(QtCore.QRect(250, 240, 261, 31))
+        self.user_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.user_password.setObjectName("user_password")
+        self.back = QtWidgets.QPushButton(self.centralwidget)
+        self.back.setGeometry(QtCore.QRect(0, 0, 61, 71))
+        self.back.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.back.setMouseTracking(True)
+        self.back.setStyleSheet("border-image: url(:/beijing1/icons/back.png);")
+        self.back.setText("")
+        self.back.setObjectName("back")
+        self.xuehao = QtWidgets.QLabel(self.centralwidget)
+        self.xuehao.setGeometry(QtCore.QRect(140, 310, 81, 31))
+        self.xuehao.setAlignment(QtCore.Qt.AlignCenter)
+        self.xuehao.setObjectName("xuehao")
+        self.Student_name = QtWidgets.QLineEdit(self.centralwidget)
+        self.Student_name.setGeometry(QtCore.QRect(250, 310, 261, 31))
+        self.Student_name.setEchoMode(QtWidgets.QLineEdit.Normal)
+        self.Student_name.setObjectName("Student_name")
+        self.jiaowuchumima = QtWidgets.QLabel(self.centralwidget)
+        self.jiaowuchumima.setGeometry(QtCore.QRect(110, 370, 131, 31))
+        self.jiaowuchumima.setAlignment(QtCore.Qt.AlignCenter)
+        self.jiaowuchumima.setObjectName("jiaowuchumima")
+        self.Student_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.Student_password.setGeometry(QtCore.QRect(250, 370, 261, 31))
+        self.Student_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.Student_password.setObjectName("Student_password")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 775, 26))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.check.clicked.connect(MainWindow.slot4)
+        self.back.clicked.connect(MainWindow.slot5)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.check.setText(_translate("MainWindow", "确认注册并绑定"))
+        self.xuehao.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">学号:</span></p></body></html>"))
+        self.jiaowuchumima.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">教务处密码:</span></p></body></html>"))
+import background1_rc
