@@ -28,7 +28,7 @@ def postcards(cards):#出牌
     headers = {'content-type': "application/json"}
     headers['x-auth-token'] = token
     data = {'id':id}
-    print('出牌牌型:')
+    print('出牌牌型信息:')
     best_match = special_cards_type(cards)
     if best_match[0]:
         data['card'] = best_match[1]
@@ -127,8 +127,6 @@ def get_rank():#排行榜
     for i in info:
         print('排名:',count,i['player_id'],i['score'],i['name'])
         count += 1
-        if i['name'] == 'dreamer':
-            break
     return info
 
 def get_history_list(playerid,page):#获取历史战局列表
@@ -162,20 +160,22 @@ def get_history_detail(game_id):#获取历史战局详情
     return info
 
 if __name__=='__main__':
-    login('dreamer','147852369.6666')
-    i = 1
-    while i:
-        res = startgame()
-        if 'status' in res:
-            res1 = postcards(res['data']['card'])
-            if 'status' in res1[1]:
-                if res1[1]['status']:
-                    print(res1[1])
-                    continue
+    name = str(input("username:"))
+    psw = str(input("password:"))
+    login(name,psw)
+    while 1:
+        count = int(input("请输入你想要开启的战局数:"))
+        while count:
+            res = startgame()
+            if 'status' in res:
+                res1 = postcards(res['data']['card'])
+                if 'status' in res1[1]:
+                    if res1[1]['status']:
+                        print(res1[1])
+                        continue
             else:
-                import time
-                time.sleep(15)
-
-
-
-    #get_history_list('1005','1')
+                print(res)
+                continue
+            count -= 1
+        print('当前排行榜:')
+        get_rank()
