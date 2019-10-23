@@ -1,7 +1,6 @@
 from httpfunctions import *
 from 普通牌型 import *
 from 特殊牌型 import *
-
 def item_delete(items, cards):
     Cards = copy(cards)
     for item in items:
