@@ -2,7 +2,7 @@
 ## 徽章
 ![](https://img.shields.io/badge/python-3.7-green)<br>
 ![](https://img.shields.io/badge/HappyThirTeenWater-v1.0.0-brightgreen)<br>
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0d5f099c86ee403591c3132b75609b9d)](https://www.codacy.com/manual/DDDdreamer/HappyThirteenWater-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DDDdreamer/HappyThirteenWater-&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9a907fddc2414a2f9dd333ebb3b75cf4)](https://www.codacy.com/manual/DDDdreamer/HappyThirteenWater-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DDDdreamer/HappyThirteenWater-&amp;utm_campaign=Badge_Grade)
 ## 编译+运行环境
     无需编译！！！
     运行环境：windows + 工具版本：python3.7 + 运行前需先下载pyqt5、requests第三方库，可使用pip对pyqt5、requests库进行下载安装
